@@ -29,13 +29,10 @@
             {% for message in comments %}
             <div class="single-comment justify-content-between d-flex">
                 <div class="user justify-content-between d-flex">
-                    <img class="rounded-circle article-img"
-                        src="{{ url_for('static', filename='profile_img/' + post.author.image_file) }}">
+                    
                     <div class="media-body">
                         <div class="article-metadata">
-                            <a class="mr-2" href="{{ url_for('user_posts', username=post.author.username) }}">{{
-                                current_user.username
-                                }}</a>
+                            
                             <small class="text-muted">{{ message.date_posted.strftime('%m-%d-%Y') }}</small>
                         </div>
                         <p class="article-content">{{ message.message }}</p>
@@ -51,8 +48,7 @@
     <h4>Post a Comment</h4>
     <form method="POST">
         <div class="article-metadata">
-            <a class="mr-2" href="#">{{ current_user.username
-                }}</a>
+            
         </div>
         <div class="form-group">
             <textarea name="message" class="form-control mb-10" rows="5" name="message" placeholder="Messege"
